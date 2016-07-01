@@ -1,40 +1,19 @@
 <?php
 header('Content-Type: text/xml;charset=UTF-8');
 
-$SESSION_STORAGE = './storage/actual.txt';
-if (!isset($_GET['verb'])) {
-  if (isset($_GET['cmd'])) {
-    $cmd = $_GET['cmd'];
-    switch ($cmd) {
-      case 'set':
-        $value = $_GET['value'];
-        file_put_contents($SESSION_STORAGE, $value);
-        print '<success/>';
-        break;
-
-      case 'get':
-        print file_get_contents($SESSION_STORAGE);
-        break;
-
-      default:
-        print '<failure/>';
-        break;
-    }
-  }
-  else {
-    print '<failure/>';
-  }
-  return;
-}
+// Get paramter and split into array
+//
 $idArray = explode('&',$_SERVER["QUERY_STRING"]);
 foreach ($idArray as $index => $avPair)
 {
   list($ignore, $value) = explode("=", $avPair);
   $id[$index] = $value;
 }
-//$verb = $_GET['verb'];
-
+//
+//
+//
 $verb = $id[0];
+//
 switch($verb) {
 case 'Identify' :
     if (count($idArray) == 1){
