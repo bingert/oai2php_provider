@@ -10,6 +10,7 @@ foreach ($idArray as $index => $avPair)
   $id[$index] = $value;
 }
 //
+include 'config.php';
 //
 //
 $verb = $id[0];
@@ -17,7 +18,6 @@ $verb = $id[0];
 switch($verb) {
 case 'Identify' :
     if (count($idArray) == 1){
-        //readfile('responses/standard/identify.xml');
         include 'responses/standard/identify.php';
     } else {
         readfile('responses/standard/error_badargument.xml');

@@ -1,5 +1,10 @@
-<?php
+/*
+OAI PMH conform response for the IDENTIFY verb
 
+2016.07.01: bingert
+*/
+
+<?php
 // Set the content type to be XML, so that the browser will   recognise it as XML.
 header( "content-type: application/xml; charset=ISO-8859-15" );
 
