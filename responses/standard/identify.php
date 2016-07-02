@@ -1,9 +1,3 @@
-/*
-OAI PMH conform response for the IDENTIFY verb
-
-2016.07.01: bingert
-*/
-
 <?php
 // Set the content type to be XML, so that the browser will   recognise it as XML.
 header( "content-type: application/xml; charset=ISO-8859-15" );
@@ -32,7 +26,7 @@ $xml_request->setAttribute( "verb", "Identify" );
   $xml_repositoryName = $xml->createElement( "repositoryName" , "Humanities Data Centre - Application Conservation" );
   $xml_identify->appendChild( $xml_repositoryName );
 
-  $xml_baseURL = $xml->createElement( "baseURL" ,"http://humanities-data-centre.de/wp-content/uploads/oai2" );
+  $xml_baseURL = $xml->createElement( "baseURL" , $config_baseURL );
   $xml_identify->appendChild( $xml_baseURL );
 
   $xml_protocolVersion = $xml->createElement( "protocolVersion" , "2.0" );
