@@ -15,7 +15,7 @@ $xml_OAI_PMH->setAttribute( "xsi:schemaLocation" , "http://www.openarchives.org/
     
 $xml_responseDate = $xml->createElement( "responseDate", date('c') );
 
-$xml_request = $xml->createElement( "request", "http://humanities-data-centre.de/wp-content/uploads/oai2" );
+$xml_request = $xml->createElement( "request", $config_baseURL );
 $xml_request->setAttribute( "verb", "Identify" );
 
 //
@@ -23,7 +23,7 @@ $xml_request->setAttribute( "verb", "Identify" );
 //
   $xml_identify = $xml->createElement( "Identify" );
 
-  $xml_repositoryName = $xml->createElement( "repositoryName" , "Humanities Data Centre - Application Conservation" );
+  $xml_repositoryName = $xml->createElement( "repositoryName" , $config_repositoryName );
   $xml_identify->appendChild( $xml_repositoryName );
 
   $xml_baseURL = $xml->createElement( "baseURL" , $config_baseURL );
@@ -32,10 +32,10 @@ $xml_request->setAttribute( "verb", "Identify" );
   $xml_protocolVersion = $xml->createElement( "protocolVersion" , "2.0" );
   $xml_identify->appendChild( $xml_protocolVersion );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , "sbinger1@gwdg.de");
+  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail1 );
   $xml_identify->appendChild( $xml_adminEmail );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , "hdc-portal-admin@gwdg.de");
+  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail2 );
   $xml_identify->appendChild( $xml_adminEmail );
 
   $xml_earliestDatestamp = $xml->createElement("earliestDatestamp" , "2016-01-01T12:00:00Z");
