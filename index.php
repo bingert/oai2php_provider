@@ -4,23 +4,29 @@ header('Content-Type: text/xml;charset=UTF-8');
 // Get paramter and split into array
 //
 $idArray = explode('&',$_SERVER["QUERY_STRING"]);
+$query_array = array();
+
 foreach ($idArray as $index => $avPair)
 {
   list($ignore, $value) = explode("=", $avPair);
   $id[$index] = $value;
+  $querry_array[$ignore] = $value;
 }
 //
 include 'config.php';
 //
 //
-$verb = $id[0];
+if (array_key_exists("verb",$querry_array)) $verb = $querry_array["verb"];
+//
 //
 switch($verb) {
 case 'Identify' :
-    if (count($idArray) == 1){
-        include 'responses/standard/identify.php';
-    } else {
-        readfile('responses/standard/error_badargument.xml');
+    if (array_key_exists("verb",$querry_array)) { 
+        if (count($querry_array) == 1){
+            include 'responses/standard/identify.php';
+        } else {
+            readfile('responses/standard/error_badargument.xml');
+        }
     }
     break;
     
