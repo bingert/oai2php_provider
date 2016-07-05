@@ -25,7 +25,7 @@ case 'Identify' :
     break;
     
 case 'ListSets' :
-    readfile('responses/standard/list_sets.xml');
+    include 'responses/standard/list_sets.php';
     break;
     
 case 'ListMetadataFormats' :
