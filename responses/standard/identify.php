@@ -64,7 +64,7 @@ $xml_request->setAttribute( "verb", "Identify" );
       $xml_scheme = $xml->createElement("scheme" ,"oai" );
       $xml_oai_identifier->appendChild( $xml_scheme );
 
-      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , "humanities-data-centre.de");
+      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , $config_repositoryIdentifier);
       $xml_oai_identifier->appendChild( $xml_repositoryIdentifier );
 
       $xml_delimiter = $xml->createElement("delimiter" , ":"); 
