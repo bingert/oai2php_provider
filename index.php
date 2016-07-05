@@ -36,6 +36,11 @@ case 'ListIdentifiers' :
     readfile('responses/standard/list_identifiers.xml');
     break;
 
+case 'GetRecord':
+// example: http://arXiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:cs/0112017&metadataPrefix=oai_dc
+    include 'responses/standard/list_sets.php';
+    break;
+    
 case 'ListRecords' :
     if (isset($_GET['set'])) {
         $set = $_GET['set'];

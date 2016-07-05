@@ -44,7 +44,7 @@ $xml_request->setAttribute( "verb", "Identify" );
   $xml_deletedRecord = $xml->createElement("deletedRecord" , "transient");
   $xml_identify->appendChild( $xml_deletedRecord );
 
-  $xml_granularity = $xml->createElement("granularity" , "YYYY-MM-DDThh:mm:ssZ");
+  $xml_granularity = $xml->createElement("granularity" , "YYYY-MM-DDxs");
   $xml_identify->appendChild( $xml_granularity );
 
   $xml_compression = $xml->createElement("compression" , "deflate");
@@ -70,7 +70,7 @@ $xml_request->setAttribute( "verb", "Identify" );
       $xml_delimiter = $xml->createElement("delimiter" , ":"); 
       $xml_oai_identifier->appendChild( $xml_delimiter );
 
-      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:loc.music/musdi.002"); 
+      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:21.11101/00000000"); 
       $xml_oai_identifier->appendChild( $xml_sampleIdentifier );
 
       $xml_description->appendChild( $xml_oai_identifier );
