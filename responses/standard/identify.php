@@ -1,6 +1,6 @@
 <?php
 // Set the content type to be XML, so that the browser will   recognise it as XML.
-header( "content-type: application/xml; charset=ISO-8859-15" );
+header( "content-type: application/xml; charset=UTF-8" );
 
 // "Create" the document.
 $xml = new DOMDocument( "1.0", "UTF-8" );
