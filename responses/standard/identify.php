@@ -33,10 +33,10 @@ $xml_request->setAttribute( "verb", "Identify" );
   $xml_protocolVersion = $xml->createElement( "protocolVersion" , "2.0" );
   $xml_identify->appendChild( $xml_protocolVersion );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , "sbinger1@gwdg.de");
+  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail1 );
   $xml_identify->appendChild( $xml_adminEmail );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , "hdc-portal-admin@gwdg.de");
+  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail2 );
   $xml_identify->appendChild( $xml_adminEmail );
 
   $xml_earliestDatestamp = $xml->createElement("earliestDatestamp" , "2016-01-01T12:00:00Z");
