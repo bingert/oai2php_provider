@@ -65,13 +65,13 @@ $xml_request->setAttribute( "verb", "Identify" );
       $xml_scheme = $xml->createElement("scheme" ,"oai" );
       $xml_oai_identifier->appendChild( $xml_scheme );
 
-      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , "humanities-data-centre.de");
+      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , $config_repositoryIdentifier );
       $xml_oai_identifier->appendChild( $xml_repositoryIdentifier );
 
       $xml_delimiter = $xml->createElement("delimiter" , ":"); 
       $xml_oai_identifier->appendChild( $xml_delimiter );
 
-      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:loc.music/musdi.002"); 
+      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:21.11101/00000000" ); 
       $xml_oai_identifier->appendChild( $xml_sampleIdentifier );
 
       $xml_description->appendChild( $xml_oai_identifier );
