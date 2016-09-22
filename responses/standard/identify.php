@@ -24,10 +24,10 @@ $xml_request->setAttribute( "verb", "Identify" );
 //
   $xml_identify = $xml->createElement( "Identify" );
 
-  $xml_repositoryName = $xml->createElement( "repositoryName" , "Humanities Data Centre - Application Conservation" );
+  $xml_repositoryName = $xml->createElement( "repositoryName" , $config_repositoryName );
   $xml_identify->appendChild( $xml_repositoryName );
 
-  $xml_baseURL = $xml->createElement( "baseURL" ,"http://humanities-data-centre.de/wp-content/uploads/oai2" );
+  $xml_baseURL = $xml->createElement( "baseURL" ,  $config_baseURL );
   $xml_identify->appendChild( $xml_baseURL );
 
   $xml_protocolVersion = $xml->createElement( "protocolVersion" , "2.0" );
