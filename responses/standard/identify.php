@@ -1,4 +1,5 @@
 <?php
+
 // Set the content type to be XML, so that the browser will   recognise it as XML.
 header( "content-type: application/xml; charset=UTF-8" );
 
@@ -23,19 +24,19 @@ $xml_request->setAttribute( "verb", "Identify" );
 //
   $xml_identify = $xml->createElement( "Identify" );
 
-  $xml_repositoryName = $xml->createElement( "repositoryName" , $config_repositoryName );
+  $xml_repositoryName = $xml->createElement( "repositoryName" , "Humanities Data Centre - Application Conservation" );
   $xml_identify->appendChild( $xml_repositoryName );
 
-  $xml_baseURL = $xml->createElement( "baseURL" , $config_baseURL );
+  $xml_baseURL = $xml->createElement( "baseURL" ,"http://humanities-data-centre.de/wp-content/uploads/oai2" );
   $xml_identify->appendChild( $xml_baseURL );
 
   $xml_protocolVersion = $xml->createElement( "protocolVersion" , "2.0" );
   $xml_identify->appendChild( $xml_protocolVersion );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail1 );
+  $xml_adminEmail = $xml->createElement("adminEmail" , "sbinger1@gwdg.de");
   $xml_identify->appendChild( $xml_adminEmail );
 
-  $xml_adminEmail = $xml->createElement("adminEmail" , $config_adminEmail2 );
+  $xml_adminEmail = $xml->createElement("adminEmail" , "hdc-portal-admin@gwdg.de");
   $xml_identify->appendChild( $xml_adminEmail );
 
   $xml_earliestDatestamp = $xml->createElement("earliestDatestamp" , "2016-01-01T12:00:00Z");
@@ -44,7 +45,7 @@ $xml_request->setAttribute( "verb", "Identify" );
   $xml_deletedRecord = $xml->createElement("deletedRecord" , "transient");
   $xml_identify->appendChild( $xml_deletedRecord );
 
-  $xml_granularity = $xml->createElement("granularity" , "YYYY-MM-DDxs");
+  $xml_granularity = $xml->createElement("granularity" , "YYYY-MM-DDThh:mm:ssZ");
   $xml_identify->appendChild( $xml_granularity );
 
   $xml_compression = $xml->createElement("compression" , "deflate");
@@ -64,13 +65,13 @@ $xml_request->setAttribute( "verb", "Identify" );
       $xml_scheme = $xml->createElement("scheme" ,"oai" );
       $xml_oai_identifier->appendChild( $xml_scheme );
 
-      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , $config_repositoryIdentifier);
+      $xml_repositoryIdentifier = $xml->createElement("repositoryIdentifier" , "humanities-data-centre.de");
       $xml_oai_identifier->appendChild( $xml_repositoryIdentifier );
 
       $xml_delimiter = $xml->createElement("delimiter" , ":"); 
       $xml_oai_identifier->appendChild( $xml_delimiter );
 
-      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:21.11101/00000000"); 
+      $xml_sampleIdentifier = $xml->createElement("sampleIdentifier" , "oai:humanities-data-centre.de:loc.music/musdi.002"); 
       $xml_oai_identifier->appendChild( $xml_sampleIdentifier );
 
       $xml_description->appendChild( $xml_oai_identifier );
